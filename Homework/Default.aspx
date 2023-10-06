@@ -51,7 +51,7 @@
                 <td class="auto-style5"></td>
                 <td class="auto-style7">
                     <asp:Label ID="passwordLB" runat="server" Text="密碼"></asp:Label>
-                    <asp:TextBox ID="passwordTB" runat="server" CssClass="auto-style9"></asp:TextBox>
+                    <asp:TextBox ID="passwordTB" runat="server" CssClass="auto-style9" TextMode="Password"></asp:TextBox>
                 </td>
                 <td class="auto-style5"></td>
             </tr>
@@ -64,7 +64,7 @@
                 <td>&nbsp;</td>
             </tr>
         </table>
-        <asp:DetailsView ID="clientDetailsView" runat="server" AutoGenerateRows="False" DataSourceID="clientDetail" Height="50px" Width="125px">
+        <asp:DetailsView ID="clientDetailsView" runat="server" AutoGenerateRows="False" DataSourceID="clientDetail" EmptyDataText="帳號密碼錯誤" Height="50px" Visible="False" Width="125px">
             <Fields>
                 <asp:BoundField DataField="user_name" HeaderText="user_name" SortExpression="user_name" />
                 <asp:BoundField DataField="user_money" HeaderText="user_money" SortExpression="user_money" />
