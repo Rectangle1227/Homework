@@ -58,12 +58,24 @@
             <tr>
                 <td>&nbsp;</td>
                 <td class="auto-style6">
-                    <asp:Button ID="loginBT" runat="server" Text="登入" />
+                    <asp:Button ID="loginBT" runat="server" OnClick="loginBT_Click" Text="登入" />
                     <asp:LinkButton ID="entry" runat="server">進入商店</asp:LinkButton>
                 </td>
                 <td>&nbsp;</td>
             </tr>
         </table>
+        <asp:DetailsView ID="clientDetailsView" runat="server" AutoGenerateRows="False" DataSourceID="clientDetail" Height="50px" Width="125px">
+            <Fields>
+                <asp:BoundField DataField="user_name" HeaderText="user_name" SortExpression="user_name" />
+                <asp:BoundField DataField="user_money" HeaderText="user_money" SortExpression="user_money" />
+            </Fields>
+        </asp:DetailsView>
+        <asp:SqlDataSource ID="clientDetail" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [user_name], [user_money] FROM [userData] WHERE (([user_name] = @user_name) AND ([user_password] = @user_password))">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="accountTB" Name="user_name" PropertyName="Text" Type="String" />
+                <asp:ControlParameter ControlID="passwordTB" Name="user_password" PropertyName="Text" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
     </form>
 </body>
 </html>
