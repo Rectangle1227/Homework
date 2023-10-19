@@ -21,8 +21,8 @@ namespace Homework
             if(1 == clientDetailsView.DataItemCount) //如果有抓到剛好一筆資料
             {
                 //儲存工作階段狀態
-                Session["name"] = clientDetailsView.Rows[0].Cells[0].Text;
-                Session["money"] = clientDetailsView.Rows[1].Cells[0].Text;
+                Session["name"] = clientDetailsView.Rows[0].Cells[1].Text;
+                Session["money"] = clientDetailsView.Rows[1].Cells[1].Text;
                 //後啟用商店
                 entry.Visible = true;
             }
